@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "computer-use": {
+      "version": "1.2.0",
+      "installedAt": 1770032469173
+    },
+    "guicountrol": {
+      "version": "1.0.0",
+      "installedAt": 1770032470944
+    },
+    "screen-monitor": {
+      "version": "1.0.1",
+      "installedAt": 1770033411873
+    },
+    "molt-mouse": {
+      "version": "1.0.0",
+      "installedAt": 1770033413861
+    },
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1770033415558
+    }
+  }
+}
