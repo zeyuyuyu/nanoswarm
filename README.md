@@ -2,24 +2,26 @@
 
 <div align="center">
   <p><strong>The world's first ultra-lightweight personal swarm intelligence sandbox.</strong></p>
-  <p><strong>Make life decisions with 100 AI advisors right on your laptop.</strong></p>
+  <p><strong>Make decisions and predict the future with a micro-society of AI experts on your laptop.</strong></p>
 </div>
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python 3.8+](https://img.shields.io/badge/python-3.8+-green.svg)
+![Python 3.10+](https://img.shields.io/badge/python-3.10+-green.svg)
+![Stars](https://img.shields.io/github/stars/zeyuyuyu/nanoswarm)
+![Downloads](https://img.shields.io/github/downloads/zeyuyuyu/nanoswarm/total)
 
-Inspired by the massive agent simulations of [MiroFish](https://github.com/666ghj/MiroFish) and the multi-agent context loops of [BetterFish](https://github.com/betterfish), NanoSwarm brings the power of **Swarm Intelligence** directly to your terminal.
+Inspired by the massive multi-agent event prediction engines of [MiroFish](https://github.com/666ghj/MiroFish) and the extreme portable efficiency of [PicoClaw](https://github.com/sipeed/picoclaw), **NanoSwarm** brings true Swarm Intelligence directly to your terminal.
 
 Instead of asking just one AI a generic question, what if you asked a **Micro-Society** of experts? 
 
-NanoSwarm takes your prompt (e.g., "Should I quit my job to build an open-source startup?"), automatically generates a diverse panel of AI agents (The Critic, The Optimist, The Data Scientist, The Philanthropist), injects live search context, lets them debate it out, and synthesizes a final verdict natively in your CLI.
+NanoSwarm takes your real-world prompt (e.g., "Will AGI be achieved by 2027?" or "Should I quit my job?"), dynamically generates a panel of specialized AI agents, injects live web context, and lets them **debate** or run algorithmic **probability predictions**.
 
 ## 🚀 Why NanoSwarm?
 
-*   **🧠 Swarm Intelligence for Individuals:** Not just for governments or macro-finance predictions. For *your* decisions.
-*   **⚡ Ultra-Lightweight (like PicoClaw):** Designed to run entirely locally (via Ollama/Llama.cpp) or via cheap fast APIs. No heavy orchestration frameworks needed. Just Python.
-*   **🎭 Dynamic Personas:** Automatically spawns the perfect mix of experts based on *your specific prompt*. 
-*   **🌐 Live Web Context:** Pass `--search` to silently scrape DuckDuckGo for the latest context before the debate begins so agents aren't hallucinating on old data.
+*   **🔮 Predict Anything:** Use `--mode predict` to let the swarm compute the % probability of a real-world event occurring based on live data (a la MiroFish).
+*   **🗣️ Multi-Round Debates:** Allow agents to counter-argue and criticize each other iteratively before reaching a verdict via `--rounds 3`.
+*   **⚡ Ultra-Lightweight (The Nano Philosophy):** Designed to run entirely locally (via Ollama) or via cheap fast APIs. No heavy orchestration frameworks (`autogen`, `crewai`) needed. Just native Python `asyncio`.
+*   **🌐 Live Reality Grounding:** Pass `--search` to silently scrape DuckDuckGo for the latest context before the debate starts.
 
 ## 🛠️ Quick Start
 
@@ -28,32 +30,40 @@ git clone https://github.com/zeyuyuyu/nanoswarm.git
 cd nanoswarm
 pip install .
 
-# Set your API key (if using LiteLLM/OpenAI/Anthropic/Gemini etc.)
-export OPENAI_API_KEY="sk-..."
+export OPENAI_API_KEY="sk-..."  # Or GEMINI_API_KEY, ANTHROPIC_API_KEY...
+```
 
-# Run the CLI
-nanoswarm "Should I invest in early-stage AI startups right now?"
+### Mode 1: Swarm Debate (Life Decisions)
+```bash
+# Will cast a diverse group, pull live search data, and let them argue for 2 rounds
+nanoswarm "Should I buy a house in a major city in 2026?" --search --rounds 2
+```
 
-# Enable Live Search Context
-nanoswarm "What are the key takeaways from the MiroFish GitHub launch?" --search
+### Mode 2: Swarm Prediction (Market/Tech Forecasts)
+```bash
+# Will ask the swarm to assign mathematical probabilities 
+nanoswarm "Will OpenAI release GPT-5 before December 2026?" --mode predict --search
+```
 
-# Use a completely local model via Ollama!
-nanoswarm "Should I buy a house in 2026?" --model ollama/llama3
+### Mode 3: Local Only (Ollama integration)
+```bash
+# Don't want to use OpenAI? Use Ollama!
+nanoswarm "Should I learn Rust?" --model ollama/llama3
 ```
 
 ## 🏗️ Architecture
 
-1.  **Ingestion & Search:** You ask a question. If `--search` is enabled, a lightweight query is generated and DuckDuckGo is scraped for immediate global context.
-2.  **Casting:** NanoSwarm analyzes the question and dynamically generates a personalized JSON array of distinct personas.
-3.  **Ideation (The Swarm):** Each persona generates an independent analysis simultaneously using `asyncio.gather`.
-4.  **Debate (The Crucible):** The tools run inside a fast async gather loop, streaming the results back to a beautiful `rich` terminal UI wrapper.
-5.  **Synthesis:** A master "Synthesizer" reads the entire debate log and outputs a cohesive, balanced, final recommendation.
+1.  **Ingestion & Intel:** If `--search` is enabled, NanoSwarm synthesizes a boolean search query and scrapes the web for zero-day context.
+2.  **Casting:** The engine dynamically spawns a customized JSON roster of distinct personas (Skeptics, Analysts, Visionaries) based on the exact topic.
+3.  **The Crucible (Async Gathering):** 
+    *   *Debate Mode:* Agents read the context and each other's previous statements in an async execution loop.
+    *   *Predict Mode:* Agents individually compute probabilities and reasoning, feeding into an aggregate swarm percentage.
 
 ## 🤝 Roadmap / Contributing
 PRs are welcome! 
-- [ ] Add Agent Memory across multiple turn debates
-- [ ] Swarm Visualizer output (HTML/JS)
-- [ ] Connect internal CLI commands to Local MCP endpoints 
+- [ ] Agent Memory (saving state locally to JSON/SQLite)
+- [ ] HTML/JS visualizer for swarm breakdown
+- [ ] Direct MCP integrations for agent tool-use
 
 ## 📜 License
 MIT License.
